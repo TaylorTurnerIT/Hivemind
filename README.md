@@ -1,0 +1,64 @@
+# Hivemind
+
+**Hivemind** is a self-hosted orchestration system and control panel for managing multiple FoundryVTT instances.
+
+Designed specifically for the personal homelab, Hivemind allows a single host to easily manage games for multiple GMs and dozens of players. Whether you are hosting for your own groups or acting as the server admin for a collective of friends, Hivemind provides a centralized, resource-efficient way to deploy, manage, and play. Ultimately, this project is being designed for my own uses but as an opportunity to give back to the FoundryVTT community, I am publishing and sharing my work under a permissive license.
+
+> **⚠️ Project Status: Planning Phase**
+> This project is currently in the initial design and planning stage. No features are currently implemented. The documentation below outlines the *intended* architecture and feature set.
+
+## The Goal
+
+Existing solutions often require complex manual port management, lack centralized asset handling, or are designed for enterprise-grade hosting services.
+
+Hivemind aims to be:
+
+1. **Deployment Friendly:** A pre-configured Nix configuration and Docker Compose setup to get a fully functional system running in minutes.
+2. **Resource Efficient:** Intelligently spins containers up and down based on activity to save RAM and CPU.
+3. **Storage Smart:** Deduplicates module data using symbolic links, so you don't store "Dice So Nice" 50 times.
+4. **Seamless:** Single Sign-On (SSO) removes the need for individual world passwords. A ForgeVTT exclusive no more!
+
+**Note:** Hivemind is being designed exclusively for deployment only on **Linux** environments.
+
+## GLOSSARY
+
+To understand how Hivemind structures data, please review the following definitions:
+
+* **Foundry Instance:** A discrete container running the FoundryVTT software.
+* **Foundry World:** The actual game data (scenes, actors, chat, journals).
+* **Active World:** A currently running Foundry Instance accessible via the web.
+* **Front Page:** The authenticated dashboard where Players, GMs, and Admins connect to and manage games.
+* **Orchestrator:** The backend service that manages the lifecycle of containers and API requests.
+
+##  Planned Features
+
+### Orchestration & Resource Management
+
+* **Containerized Instances:** The Orchestrator (running in Docker) manages Podman containers for each individual Foundry instance.
+* **Auto-Sleep/Wake:** Instances are monitored for player activity.
+* **Active:** Instance is running and accessible.
+* **Idle:** After a configurable time with no players, the instance shuts down to save resources.
+* **Wake-on-Demand:** Users can wake an "Idle" world directly from the Front Page.
+* **Shared Module Library:** Modules are downloaded to a single source directory and symbolically linked to instances. This prevents data duplication and saves massive amounts of disk space.
+
+### Authentication & Security
+
+* **Centralized SSO:** A single login for the entire Hivemind system. No more "Join Game" screens or per-world passwords.
+* **Modern Auth:** Support for standard passwords, Passkeys (Biometrics/Password Managers), and Social Login (Google, Apple, etc.).
+* **Auto-Injection:** When a user launches a world, Hivemind injects a per-user key into the Foundry instance, automatically logging them in as their per-world user.
+* **Role-Based Access:** The Orchestrator enforces visibility. Players only see the games they are invited to.
+
+### Administration & Tools
+
+* **Package Manager:** A UI for GMs and Admins to manage modules per instance.
+* **Template Worlds:** Admins can create "Master Worlds" (e.g., a pre-configured D&D 5e setup) to use as a template for new instances.
+* **World Import:** Easy tools to ingest existing Foundry data from outside the system.
+* **Per-User Assets:** Segregated asset storage for players and GMs.
+
+## Contributing
+
+We are currently in the planning phase. If you are interested in the architecture or have suggestions for the roadmap, please open a Discussion ticket!
+
+---
+
+*Hivemind is an independent project and is not affiliated with Foundry Gaming, LLC.*

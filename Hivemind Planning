@@ -1,0 +1,65 @@
+Help me plan a FoundryVTT orchestration system and control panel website called Hivemind.
+
+# Hivemind
+Hivemind would serve as a self-hosted deployable setup for managing many FoundryVTT instances for personal use.
+
+## Defintions:
+        Foundry Instance -> A discreet container running FoundryVTT
+        Foundry World -> A FoundryVTT world containing scenes, actors, chat, and other VTT content
+        Active World -> A running Foundry Instance
+        Front Page -> An authenticated webpage that players, GMs, and admins can use to connect to and manage games
+        Orchestrator -> A backend container that handles all API calls to manage the
+## Ideas:
+        The orchestrator would run in a docker container
+        The orchestrator  would be tasked with spinning up and down containers running the Docker image of FoundryVTT.
+        Each world would run in a dedicated instance
+        Each world would have a pre-made admin user
+        The GM of each world could be assigned from the admin panel by the Admin
+        The panel would contain a package manager that allows for per-instance Foundry module management by the GM or admin
+        There would be an import feature to bring in worlds from outside the system
+        Each Foundry instance would have its own per-player assets
+        All modules would be downloaded to a single source directory and symbolically linked to all instances that require it (prevent duplication)
+        All world and instance configuration would be instance specific
+        There would be the ability for the admin to create a template world which a new instance could be created with
+        By default, when an instance starts it starts with its own world
+        Hivemind would have a login system which would allow SSO for all instances, skipping the join page
+        To skip the join page, there would be a loading page for a starting container which would hide the startup and auto-login
+        The login would use a custom per-user key which would be used as the Foundry Instance's password.
+        The Foundry instance would login the user automatically if their cookies contain the appropriate per-user key
+        The per-user key would be assigned at login by Hivemind's authentication system
+        The authentication system would allow passwords, Passkeys (one click login w/ Password Manager), and Social Login (Google, Apple, etc.)
+        The front page would show all worlds on the majority of the screen
+        The front page would show all active worlds on a quickly accessible panel
+        All Foundry Instances will be status pinged by the Orchestrator to find the number of active users and active status
+        All Foundry Instances with no players active for a configurable amount of time will be shutdown by the orchestrator
+        The front page would have a button to (shutdown and restart when in active status) or (start when in off status)
+        The orchestrator should track the status of each instance as active, idle, or disabled
+        Active status indicates an instance is turned on, Idle status indicates the instance is shutdown, Disabled means the instance cannot be turned on except by the admin or GM
+        The front page and the orchestrator would communicate exclusively through the API
+        The API would require authentication for all requests
+        The front page would require login for all requests
+        Any traffic connecting to any page on the front page (including specific Foundry Instances) would require authentication
+        Any non-authenticated traffic would be redirected to the authentication
+        Any traffic redirected to authentication would be redirected back to their original destination
+        Each instance contains a list of all users with their authenticated tokens stored as passwords
+        The orchestrator enforces access and visibility for worlds per-player, preventing users who are not players from seeing or connecting to games
+        A player can be assigned as a GM by an Admin
+        Each GM can have a custom homepage which they can customize with a background, colors, etc.
+## Front-end Tech Stack
+        React
+        Tailwind
+        shadcn/ui
+        TanStack
+        ESLint
+        Zod
+        React Hook Form
+        Lucide Icon + Framer Motion
+        Vite
+        Bun
+## Back-end Tech Stack
+        Go
+        SQLite
+        Echo
+        GORM (???)
+        Podman
+        Viper (declarative config ENV)
