@@ -1,16 +1,19 @@
 <img width="955" height="652" alt="Hivemind_Logo_No_Background" src="https://github.com/user-attachments/assets/3454c312-92d4-4f68-be25-90db874803ea" />
 <div align="center">
-  
+
 # Hivemind
+<p>
+<em><b>Hivemind</b> is a self-hosted <b>orchestration</b> system and <b>control panel</b> for managing multiple <b><a href=https://foundryvtt.com/>FoundryVTT</a></b> instances.</em>
+</p>
 </div>
 
+  
 
-**Hivemind** is a self-hosted orchestration system and control panel for managing multiple FoundryVTT instances.
-
-Designed specifically for the personal homelab, Hivemind allows a single host to easily manage games for multiple GMs and dozens of players. Whether you are hosting for your own groups or acting as the server admin for a collective of friends, Hivemind provides a centralized, resource-efficient way to deploy, manage, and play. Ultimately, this project is being designed for my own uses but as an opportunity to give back to the FoundryVTT community, I am publishing and sharing my work under a permissive license.
+Hivemind allows a single host to easily manage games for multiple GMs and dozens of players. Whether you are hosting for your own groups or acting as the server admin for a collective of friends, Hivemind provides a centralized, resource-efficient way to deploy, manage, and play. 
 
 > [!NOTE]
-> **Project Status: Planning Phase**
+> ### Project Status: 🤔
+> **Planning Phase**
 > This project is currently in the initial design and planning stage. No features are currently implemented. The documentation below outlines the *intended* architecture and feature set.
 
 ## The Goal
@@ -23,16 +26,6 @@ Hivemind aims to be:
 2. **Resource Efficient:** Intelligently spins containers up and down based on activity to save RAM and CPU.
 3. **Storage Smart:** Deduplicates module data using symbolic links, so you don't store "Dice So Nice" 50 times.
 4. **Seamless:** Single Sign-On (SSO) removes the need for individual world passwords. A ForgeVTT exclusive no more!
-
-## GLOSSARY
-
-To understand how Hivemind structures data, please review the following definitions:
-
-* **Foundry Instance:** A discrete container running the FoundryVTT software.
-* **Foundry World:** The actual game data (scenes, actors, chat, journals).
-* **Active World:** A currently running Foundry World on a Foundry Instance accessible via the web.
-* **Front Page:** The authenticated dashboard where Players, GMs, and Admins connect to and manage games.
-* **Orchestrator:** The backend service that manages the lifecycle of containers and API requests.
 
 ##  Planned Features
 
@@ -60,6 +53,8 @@ To understand how Hivemind structures data, please review the following definiti
 ## Contributing
 
 We are currently in the planning phase. If you are interested in the architecture or have suggestions for the roadmap, please open a Discussion ticket!
+
+Ultimately, this project is being designed for my own uses but as an opportunity to give back to the FoundryVTT community, I am publishing and sharing my work under a permissive license.
 
 ---
 
