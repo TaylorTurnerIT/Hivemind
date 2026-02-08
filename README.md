@@ -12,8 +12,7 @@
 Hivemind allows a single host to easily manage games for multiple GMs and dozens of players. Whether you are hosting for your own groups or acting as the server admin for a collective of friends, Hivemind provides a centralized, resource-efficient way to deploy, manage, and play. 
 
 > [!NOTE]
-> ### Project Status: 🤔
-> **Planning Phase**
+> ### Project Status: Planning Phase 💡
 > This project is currently in the initial design and planning stage. No features are currently implemented. The documentation below outlines the *intended* architecture and feature set.
 
 ## The Goal
