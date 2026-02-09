@@ -11,10 +11,6 @@
 
 Hivemind allows a single host to easily manage games for multiple GMs and dozens of players. Whether you are hosting for your own groups or acting as the server admin for a collective of friends, Hivemind provides a centralized, resource-efficient way to deploy, manage, and play. 
 
-> [!NOTE]
-> ### Project Status: Planning Phase 💡
-> This project is currently in the initial design and planning stage. No features are currently implemented. The documentation below outlines the *intended* architecture and feature set.
-
 ## The Goal
 
 Existing solutions often require complex manual port management, lack centralized asset handling, or are designed for enterprise-grade hosting services.
@@ -25,6 +21,10 @@ Hivemind aims to be:
 2. **Resource Efficient:** Intelligently spins containers up and down based on activity to save RAM and CPU.
 3. **Storage Smart:** Deduplicates module data using symbolic links, so you don't store "Dice So Nice" 50 times.
 4. **Seamless:** Single Sign-On (SSO) removes the need for individual world passwords. A ForgeVTT exclusive no more!
+
+> [!NOTE]
+> ### Project Status: Planning Phase 💡
+> This project is currently in the initial design and planning stage. No features are currently implemented. The documentation below outlines the *intended* architecture and feature set.
 
 ##  Planned Features
 
