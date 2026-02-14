@@ -1,5 +1,5 @@
 <div align="center">
-<img width="477" height="321" alt="Hivemind_Logo_No_Background" src="https://github.com/user-attachments/assets/3454c312-92d4-4f68-be25-90db874803ea" />
+<img width="477" height="321" alt="Hivemind_darkened" src="https://github.com/user-attachments/assets/5c9d7a0d-aa19-4c01-ba7d-44f0c4176a13" />
 
 # Hivemind
 <p>
