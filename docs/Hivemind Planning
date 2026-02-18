@@ -46,20 +46,9 @@ Hivemind would serve as a self-hosted deployable setup for managing many Foundry
         A player can be assigned as a GM by an Admin
         Each GM can have a custom homepage which they can customize with a background, colors, etc.
 ## Front-end Tech Stack
-        React
-        Tailwind
-        shadcn/ui
-        TanStack
-        ESLint
-        Zod
-        React Hook Form
-        Lucide Icon + Framer Motion
+        React (shadcn/ui, Tailwind)
         Vite
         Bun
 ## Back-end Tech Stack
-        Go
-        SQLite
-        Echo
-        GORM (???)
+        PocketBase
         Podman
-        Viper (declarative config ENV)
